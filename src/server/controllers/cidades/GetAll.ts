@@ -22,5 +22,5 @@ export const getAll = async (req: Request<{}, {}, {}, IQueryProps>, res: Respons
   console.log(req.query);
 
 
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Not Implemented');
+  return res.status(StatusCodes.ACCEPTED).send('Not Implemented');
 };//Controller do create

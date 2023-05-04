@@ -19,5 +19,5 @@ export const create = async (req: Request<{}, {}, ICidade>, res: Response) => {
   console.log(req.body);
 
 
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Not Implemented');
+  return res.status(StatusCodes.CREATED).send('Not Implemented');
 };//Controller do create

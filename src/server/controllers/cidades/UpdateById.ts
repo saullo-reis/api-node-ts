@@ -25,5 +25,5 @@ export const updateById = async (req: Request<{}, {}, {}, IBodyProps>, res: Resp
   console.log(req.body);
 
 
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Not Implemented');
+  return res.status(StatusCodes.CREATED).send('Not Implemented');
 };//Controller do create
