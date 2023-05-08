@@ -2,15 +2,15 @@ import { Request, Response } from 'express';
 import * as yup from 'yup';
 import { validation } from '../../shared/middlewares';
 import {StatusCodes} from 'http-status-codes';
+import { ICidade } from '../../db/models';
 
-interface ICidade {
-  nome: string;
-  estado: string;
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface IBodyProps extends Omit<ICidade, 'id'>{
 }//interface 
 
 //Nesse código está fazendo as validações para que não de erro. primeiro passando o tipo, depois se ele é obrigatório e por último a quantidade de char.
 export const createValidation = validation((getSchema) => ({
-  body: getSchema<ICidade>(yup.object().shape({
+  body: getSchema<IBodyProps>(yup.object().shape({
     nome: yup.string().required().min(3),
   })),
 }));
